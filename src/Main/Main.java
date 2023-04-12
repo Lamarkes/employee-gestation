@@ -4,12 +4,13 @@ import Entities.Analyst;
 import Entities.Manager;
 import Entities.Programmer;
 import Exception.EmployeeAlreadyExistsException;
+import Model.BinarySearch;
 import Model.CalculatorSalary;
 import Model.EmployeeList;
 import java.util.Locale;
 public class Main {
     public static void main(String[] args) throws EmployeeAlreadyExistsException {
-        Locale.setDefault(Locale.US);
+       Locale.setDefault(Locale.US);
         CalculatorSalary calculatorSalary = new CalculatorSalary();
         EmployeeList employeeList = new EmployeeList();
 
@@ -50,15 +51,19 @@ public class Main {
 
         employeeList.listEmployee();
 
-        employeeList.searchEmployeeIndex(0);
+       employeeList.searchEmployeeIndex(0);
 
         employeeList.deleteEmployee(3);
 
         System.out.println("-------------------------------");
 
-        employeeList.listEmployee();
+       employeeList.listEmployee();
 
-        calculatorSalary.calculatorSalaryFinal(analyst1);
+       calculatorSalary.calculatorSalaryFinal(analyst1);
+
+
+        System.out.println(BinarySearch.binarySearch(employeeList, 2));
+
 
     }
 }

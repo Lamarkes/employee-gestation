@@ -3,7 +3,7 @@ package Model;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public abstract class EmployeeModel extends ArrayList<EmployeeModel> {
+public abstract class EmployeeModel extends ArrayList<EmployeeModel> implements Comparable<EmployeeModel>{
 
     private String name;
     private int age;
@@ -60,6 +60,12 @@ public abstract class EmployeeModel extends ArrayList<EmployeeModel> {
 
     public int getWorkedHours() {
         return workedHours;
+    }
+
+
+    @Override
+    public int compareTo(EmployeeModel otherEmployee){
+        return this.name.compareTo(otherEmployee.getName());
     }
 
     @Override
